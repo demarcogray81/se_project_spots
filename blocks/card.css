@@ -50,24 +50,6 @@
   font-size: 20px;
 }
 
-@media screen and (max-width: 320px) {
-  .card__image {
-    height: 288px;
-  }
-
-  .card__title {
-    font-size: 16px;
-    line-height: 1;
-    max-width: 240px;
-  }
-
-  .card__like-button {
-    width: 20px;
-    height: 18px;
-    background-size: contain;
-  }
-}
-
 @media screen and (max-width: 627px) {
   .card__image {
     height: 288px;
