@@ -4,10 +4,14 @@
 
 Social media page centered on being adaptive to the size screen being used.
 
+## Video
+
+* https://drive.google.com/file/d/1VxuvLf5YJpYz60H0H4vlbEuHB6hlYqb2/view?usp=drive_link
+
 ## Demo
 
 **View the live demo of the project.**
-  * https://princeahbar.github.io/se_project_spots
+  * https://princeahbar.github.io/se_project_spots/
 
   * [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
   
