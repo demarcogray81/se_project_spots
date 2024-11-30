@@ -2,7 +2,14 @@
 
 ## Overview  
 
-Social media page centered on being adaptive to the size screen being used 
+Social media page centered on being adaptive to the size screen being used.
+
+## Demo
+
+**View the live demo of the project.**
+  * https://princeahbar.github.io/se_project_spots
+
+  * [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
   
 ## Project Features
 
@@ -13,11 +20,7 @@ Social media page centered on being adaptive to the size screen being used
 - Centered Content: Content is always centered, regardless of the viewport width.
 - Overflow Control: The overflow property is used to ensure text remains contained within its respective elements, preventing overflow into adjacent containers.
 
-## Demo
 
-**View the live demo of the project.**
-
-  * [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
   
 ## Images  
 Example images to display what the site should look like in its published state.
