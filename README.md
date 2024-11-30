@@ -4,6 +4,10 @@
 
 Social media page centered on being adaptive to the size screen being used.
 
+## Video
+
+* https://drive.google.com/file/d/1VxuvLf5YJpYz60H0H4vlbEuHB6hlYqb2/view?usp=drive_link
+
 ## Demo
 
 **View the live demo of the project.**
