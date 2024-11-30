@@ -21,7 +21,7 @@
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  justify-content: center; /* Center horizontally */
+  justify-content: center;
   align-items: center;
   transition: opacity 0.5s ease-in-out;
   cursor: pointer;
