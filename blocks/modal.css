@@ -28,7 +28,7 @@
   font-weight: 500;
 }
 
-.modal__close-btn {
+.modal__close-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,7 @@
   cursor: pointer;
 }
 
-.modal__close-btn:hover {
+.modal__close-button:hover {
   opacity: 1;
 }
 
@@ -94,7 +94,7 @@
   color: rgba(33, 33, 33, 1);
 }
 
-.modal__submit-btn {
+.modal__submit-button {
   background-color: #212121;
   width: 156px;
   padding: 18px 0;
@@ -106,7 +106,7 @@
   cursor: pointer;
 }
 
-.modal__submit-btn:hover {
+.modal__submit-button:hover {
   opacity: 0.8;
 }
 
@@ -124,7 +124,7 @@
     margin: 10px 0 24px;
   }
 
-  .modal__close-btn {
+  .modal__close-button {
     top: 12px;
     right: 12px;
   }
@@ -133,7 +133,7 @@
     margin-bottom: 24px;
   }
 
-  .modal__submit-btn {
+  .modal__submit-button {
     width: 100%;
   }
 }
