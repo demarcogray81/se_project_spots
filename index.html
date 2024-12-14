@@ -46,21 +46,25 @@
           </button>
         </section>
 
-        <section class="cards">
+        <section class="cards page__section">
           <ul class="cards__list">
             <template id="card-template">
               <li class="card">
                 <img src="" alt="" class="card__image" />
                 <div class="card__content">
                   <h2 class="card__title"></h2>
-                  <button type="button" class="card__like-button"></button>
+                  <button
+                    aria-label="Like card"
+                    type="button"
+                    class="card__like-button"
+                  ></button>
                 </div></li
             ></template>
           </ul>
         </section>
       </main>
 
-      <footer class="footer">
+      <footer class="footer page__section">
         <p class="footer__title">2024 &copy; Spots</p>
       </footer>
       <div class="modal" id="edit-modal">
