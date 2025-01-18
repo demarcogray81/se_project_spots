@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
@@ -50,6 +49,14 @@
           <ul class="cards__list">
             <template id="card-template">
               <li class="card">
+                <div>
+                  <button
+                    aria-label="Delete Button"
+                    type="button"
+                    class="card__del-button"
+                  ></button>
+                </div>
+
                 <img src="" alt="" class="card__image" />
                 <div class="card__content">
                   <h2 class="card__title"></h2>
@@ -97,7 +104,51 @@
           </form>
         </div>
       </div>
+
+      <div class="modal" id="new-card-modal">
+        <div class="modal__container">
+          <button type="button" class="modal__close-button"></button>
+          <h2 class="modal__title">New Post</h2>
+
+          <form id="new-card-form" class="modal__form">
+            <label for="card-name-input" class="modal__label">
+              Image Link
+              <input
+                id="card-name-input"
+                type="url"
+                class="modal__input"
+                placeholder="Paste a link to the picture"
+              />
+            </label>
+            <label for="card-caption-input" class="modal__label">
+              Caption
+              <input
+                id="card-caption-input"
+                type="text"
+                class="modal__input"
+                placeholder="Type your caption"
+              />
+            </label>
+            <button type="submit" class="modal__submit-button">Save</button>
+          </form>
+        </div>
+      </div>
     </div>
+
+    <div class="modal" id="preview-modal">
+      <div class="modal__container modal__container_type_preview">
+        <button
+          aria-label="Close Modal"
+          type="button"
+          class="modal__close-button modal__close-button_preview"
+        >
+          <img src="images/white-cross.svg" alt="cross" />
+        </button>
+        <img class="modal__image" src="#" alt="" />
+        <p class="modal__caption"></p>
+      </div>
+    </div>
+
     <script defer src="./scripts/index.js"></script>
   </body>
 </html>
