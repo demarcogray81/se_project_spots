@@ -198,6 +198,12 @@
     top: -30px !important;
   }
 
+  .modal__image {
+    max-width: 288px;
+    max-height: 60vh;
+    width: 100%;
+  }
+
   .modal__label {
     margin-bottom: 24px;
   }
@@ -236,7 +242,7 @@
   }
 
   .modal__image {
-    /* max-width: 90vw; */
+    max-width: 288px;
     max-height: 60vh;
     width: 100%;
   }
