@@ -13,10 +13,15 @@
   padding: 0 20px;
   visibility: hidden;
   z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+  z-index: 1;
 }
 
 .modal_opened {
   visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 .modal__container {
@@ -47,7 +52,7 @@
   align-items: center;
   width: fit-content;
   padding: 4px 8px;
-  margin: 8px 0 0;
+  margin-top: 8px;
   font-weight: 500;
   font-size: 20px;
   line-height: 0.8;
@@ -152,6 +157,7 @@
   color: #fcf5e5;
   transition: opacity 0.5s ease-in-out;
   cursor: pointer;
+  font-weight: 500;
 }
 
 .modal__submit-button:hover {
@@ -170,10 +176,12 @@
   .modal__caption {
     font-size: 16px;
     line-height: 0.8;
+    margin-top: 8.43px;
   }
 
   .modal__input {
     font-size: 16px;
+    line-height: 1;
   }
 
   .modal__container_type_preview {
@@ -186,6 +194,7 @@
 
   .modal__title {
     font-size: 20px;
+    line-height: 1;
     margin: 10px 0 24px;
   }
 
