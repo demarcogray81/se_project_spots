@@ -90,16 +90,13 @@ function getCardElement(data) {
   return cardElement;
 }
 
-function closeModal(modal) {
-  previewModal.classList.remove("modal_opened");
-}
-
 function openModal(modal) {
   modal.classList.add("modal_opened");
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  previewModal.classList.remove("modal_opened");
 }
 
 function handleEditFormSubmit(evt) {
@@ -118,8 +115,8 @@ function handlecardFormSubmit(evt) {
 
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
-  console.log(cardNameInput.value);
-  console.log(cardCaptionInput.value);
+  evt.target.reset(cardNameInput.value);
+  evt.target.reset(cardCaptionInput.value);
   closeModal(cardModal);
 }
 
@@ -129,21 +126,32 @@ profileEditButton.addEventListener("click", () => {
   openModal(editModal);
 });
 
-editModalCloseBtn.addEventListener("click", () => {
-  closeModal(editModal);
+const closeButtons = document.querySelectorAll(".modal__close-button");
+
+closeButtons.forEach((button) => {
+  const modal = button.closest(".modal");
+  button.addEventListener("click", () => closePopup(modal));
 });
+
+function closePopup(modal) {
+  modal.classList.remove("modal_opened");
+}
 
 cardModalBtn.addEventListener("click", () => {
   openModal(cardModal);
 });
 
-cardModalCloseBtn.addEventListener("click", () => {
-  closeModal(cardModal);
-});
+// editModalCloseBtn.addEventListener("click", () => {
+//   closeModal(editModal);
+// });
 
-previewModalClose.addEventListener("click", () => {
-  closeModal(previewModal);
-});
+// cardModalCloseBtn.addEventListener("click", () => {
+//   closeModal(cardModal);
+// });
+
+// previewModalClose.addEventListener("click", () => {
+//   closeModal(previewModal);
+// });
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
@@ -154,3 +162,13 @@ initialCards.forEach((card) => {
   const cardElement = getCardElement(card);
   cardsList.append(cardElement);
 });
+
+// function initialCards(card, method = "prepend") {
+//   const cardElement = getCardElement(card);
+
+//   if (typeof cardsList[method] === "function") {
+//     cardsList[method](cardElement);
+//   } else {
+//     console.error(`Invalid method "${method}" used in renderCard`);
+//   }
+// }

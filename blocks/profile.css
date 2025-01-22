@@ -125,3 +125,10 @@
     width: 288px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .profile__post-button {
+    margin: 0;
+    max-width: 100%;
+  }
+}
