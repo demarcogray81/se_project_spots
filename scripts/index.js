@@ -117,8 +117,7 @@ function handlecardFormSubmit(evt) {
     name: cardCaptionInput.value,
   };
 
-  const cardElement = getCardElement(inputValues);
-  cardsList.prepend(cardElement);
+  renderCard(inputValues, "prepend");
   evt.target.reset();
   closeModal(cardModal);
 }
@@ -143,5 +142,5 @@ function renderCard(item, method = "append") {
 }
 
 initialCards.forEach((card) => {
-  renderCard(card, "append");
+  renderCard(card);
 });
