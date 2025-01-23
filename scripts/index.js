@@ -96,8 +96,14 @@ function openModal(modal) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
-  previewModal.classList.remove("modal_opened");
 }
+
+const closeButtons = document.querySelectorAll(".modal__close-button");
+
+closeButtons.forEach((button) => {
+  const modal = button.closest(".modal");
+  button.addEventListener("click", () => closeModal(modal));
+});
 
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
@@ -115,8 +121,7 @@ function handlecardFormSubmit(evt) {
 
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
-  evt.target.reset(cardNameInput.value);
-  evt.target.reset(cardCaptionInput.value);
+  evt.target.reset();
   closeModal(cardModal);
 }
 
@@ -126,49 +131,19 @@ profileEditButton.addEventListener("click", () => {
   openModal(editModal);
 });
 
-const closeButtons = document.querySelectorAll(".modal__close-button");
-
-closeButtons.forEach((button) => {
-  const modal = button.closest(".modal");
-  button.addEventListener("click", () => closePopup(modal));
-});
-
-function closePopup(modal) {
-  modal.classList.remove("modal_opened");
-}
-
 cardModalBtn.addEventListener("click", () => {
   openModal(cardModal);
 });
-
-// editModalCloseBtn.addEventListener("click", () => {
-//   closeModal(editModal);
-// });
-
-// cardModalCloseBtn.addEventListener("click", () => {
-//   closeModal(cardModal);
-// });
-
-// previewModalClose.addEventListener("click", () => {
-//   closeModal(previewModal);
-// });
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
 cardForm.addEventListener("submit", handlecardFormSubmit);
 
+function renderCard(item, method = "append") {
+  const cardElement = getCardElement(item);
+  cardsList[method](cardElement);
+}
+
 initialCards.forEach((card) => {
-  console.log(card);
-  const cardElement = getCardElement(card);
-  cardsList.append(cardElement);
+  renderCard(card, "append");
 });
-
-// function initialCards(card, method = "prepend") {
-//   const cardElement = getCardElement(card);
-
-//   if (typeof cardsList[method] === "function") {
-//     cardsList[method](cardElement);
-//   } else {
-//     console.error(`Invalid method "${method}" used in renderCard`);
-//   }
-// }
