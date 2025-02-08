@@ -81,7 +81,6 @@ function getCardElement(data) {
   });
 
   cardDelBtn.addEventListener("click", handleDeleteClick);
-
   cardLikeBtn.addEventListener("click", () => {
     cardLikeBtn.classList.toggle("card__like-button_liked");
   });
@@ -91,10 +90,29 @@ function getCardElement(data) {
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", closeModalOnEscape);
+  modal.addEventListener("mousedown", closeModalOnOverlay);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", closeModalOnEscape);
+  modal.removeEventListener("mousedown", closeModalOnOverlay);
+}
+
+function closeModalOnEscape(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+}
+
+function closeModalOnOverlay(evt) {
+  if (evt.target.classList.contains("modal")) {
+    closeModal(evt.target);
+  }
 }
 
 const closeButtons = document.querySelectorAll(".modal__close-button");
@@ -120,14 +138,17 @@ function handlecardFormSubmit(evt) {
 
   renderCard(inputValues, "prepend");
   evt.target.reset();
-  disableButton(cardSubmitBtn);
+  disableButton(cardSubmitBtn, settings);
   closeModal(cardModal);
 }
 
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescription.value = profileDescription.textContent;
-  resetValidation(editFormElement, [editModalNameInput, editModalDescription]);
+  resetValidation(editFormElement, settings, [
+    editModalNameInput,
+    editModalDescription,
+  ]);
   openModal(editModal);
 });
 
