@@ -84,8 +84,8 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 32px;
-  right: 50px;
+  top: 20px;
+  right: 20px;
   width: 40px;
   height: 40px;
   border: none;
@@ -98,6 +98,13 @@
 
 .modal__close-button:hover {
   opacity: 1;
+}
+
+.modal__close-button_delete {
+  top: -0px;
+  right: -50px;
+  background-image: url(../images/white-cross.svg);
+  color: white;
 }
 
 .modal__close-button_preview {
@@ -122,6 +129,9 @@
   height: 32px;
   width: 169px;
   color: rgba(33, 33, 33, 1);
+  white-space: nowrap;
+  width: 100%;
+  text-align: left;
 }
 
 .modal__label {
@@ -205,9 +215,124 @@
   transition: none;
 }
 
+.modal__delete-container {
+  padding: 32px 20px;
+  height: 172px;
+  width: 630px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__delete-title {
+  width: 590px;
+  color: #212121;
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0 0 36px;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  color: #212121;
+}
+
+.modal__confirm-button {
+  background-color: #ff6565;
+  color: white;
+
+  border: none;
+
+  cursor: pointer;
+
+  transition: opacity 0.3s;
+}
+
+.modal__cancel-button {
+  background-color: #ffffff;
+  color: #000;
+  border: solid 1px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.modal__confirm-button,
+.modal__cancel-button {
+  line-height: 1;
+  color: rgba(33, 33, 33, 1);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 156px;
+  height: 52px;
+  padding: 8px 16px;
+}
+
+.modal__confirm-button:hover,
+.modal__cancel-button:hover {
+  opacity: 0.8;
+}
+
+.modal__container_type_loading {
+  background: rgba(255, 255, 255, 0.9);
+  max-width: 300px;
+  padding: 24px;
+  text-align: center;
+  z-index: 2;
+}
+
+.modal__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal_type_loading {
+  z-index: 9999;
+}
+
+.modal__loading-text {
+  margin: 0;
+  font-size: 18px;
+  color: rgba(33, 33, 33, 0.8);
+}
+
+/* Optional: Add a loading spinner animation */
+.modal__loading::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+  border: 3px solid rgba(33, 33, 33, 0.2);
+  border-top: 3px solid rgba(33, 33, 33, 0.8);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media screen and (max-width: 627px) {
   .modal {
     padding: 0 10px;
+    background-color: rgba(33, 33, 33, 0.9);
   }
 
   .modal__container {
@@ -240,8 +365,9 @@
   }
 
   .modal__close-button {
-    top: 12px;
-    right: 12px;
+    background: transparent url(../images/cross.svg);
+    right: 20px;
+    top: 20px;
   }
 
   .modal__close-button_preview {
@@ -261,6 +387,39 @@
 
   .modal__submit-button {
     width: 100%;
+  }
+
+  .modal__delete-container {
+    padding: 20px;
+    height: 208px;
+    max-width: 300px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .modal__delete-title {
+    width: 100%;
+    /* This will help control line breaks */
+    max-width: 238px;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 38px;
+    /* Ensure text stays centered */
+    text-align: center;
+  }
+
+  .modal__buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .modalconfirm-button,
+  .modalcancel-button {
+    width: 100%;
+    margin: 0;
   }
 }
 
