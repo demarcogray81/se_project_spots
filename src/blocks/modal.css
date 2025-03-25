@@ -84,8 +84,8 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 32px;
-  right: 50px;
+  top: 20px;
+  right: 20px;
   width: 40px;
   height: 40px;
   border: none;
@@ -209,23 +209,23 @@
 }
 
 .modal__delete-container {
-  align-items: center;
-  display: flex;
-  text-align: center;
+  padding: 32px 20px;
   height: 172px;
   width: 630px;
+  display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .modal__delete-title {
   width: 590px;
-  color: #000;
-  font-family: Inter, Arial, sans-serif;
-  margin: 0 0 32px;
-  font-size: 20px;
+  color: #212121;
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0 0 36px;
+  font-size: 24px;
   font-weight: 500;
   text-align: center;
-  line-height: 1;
+  line-height: normal;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -233,32 +233,42 @@
 
 .modal__buttons {
   display: flex;
-  gap: 12px;
+  gap: 20px;
   justify-content: center;
   position: relative;
   z-index: 1;
+  color: #212121;
 }
 
 .modal__confirm-button {
-  background-color: #ff0000;
+  background-color: #ff6565;
   color: white;
-  padding: 12px 24px;
+
   border: none;
-  border-radius: 4px;
+
   cursor: pointer;
-  font-size: 16px;
+
   transition: opacity 0.3s;
 }
 
 .modal__cancel-button {
-  background-color: #e5e5e5;
+  background-color: #ffffff;
   color: #000;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 4px;
+  border: solid 1px;
   cursor: pointer;
-  font-size: 16px;
   transition: opacity 0.3s;
+}
+
+.modal__confirm-button,
+.modal__cancel-button {
+  line-height: 1;
+  color: rgba(33, 33, 33, 1);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 156px;
+  height: 52px;
+  padding: 8px 16px;
 }
 
 .modal__confirm-button:hover,
@@ -348,9 +358,9 @@
   }
 
   .modal__close-button {
-    background: transparent url(../images/white-cross.svg);
-    right: 2px;
-    top: -50px;
+    background: transparent url(../images/cross.svg);
+    right: 20px;
+    top: 20px;
   }
 
   .modal__close-button_preview {
@@ -384,12 +394,14 @@
   }
 
   .modal__delete-title {
-    word-wrap: break-word;
-    line-height: 1.2;
-    text-align: center;
+    width: 100%;
+    /* This will help control line breaks */
+    max-width: 238px;
     font-size: 20px;
-    white-space: normal;
-    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 38px;
+    /* Ensure text stays centered */
+    text-align: center;
   }
 
   .modal__buttons {
@@ -397,8 +409,8 @@
     width: 100%;
   }
 
-  .modal__confirm-button,
-  .modal__cancel-button {
+  .modalconfirm-button,
+  .modalcancel-button {
     width: 100%;
     margin: 0;
   }
